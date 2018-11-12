@@ -34,3 +34,10 @@ Extraer conocimiento de Datos (Disponibles o de la construcción de ellos)
 ### Machine Learning Engineer
 * Creación de Modelos Predictivos => Prescriptivos | Clasificativos
 * Mantenimiento y Ajuste de Modelos
+
+***
+# Entorno usado en el Curso:
+```
+conda create --name platzi_data beautifulsoup4 requests numpy pandas matplotlib yaml
+```
+***
