@@ -37,3 +37,20 @@ class HomePage(NewsPage):
                 links_list.append(link)
 
         return set(link['href'] for link in links_list)
+
+
+class ArticlePAge(NewsPage):
+     
+    def __init__(self, news_site_uid, url):
+        #Herencia
+        super().__init__(news_site_uid, url)
+
+    @property
+    def body(self):
+        result = self._select(self._queries['article_body'])
+        return result[0].text if len(result) else ''
+
+    @property
+    def title(self):
+        result = self._select(self._queries['article_title'])
+        return result[0].text if len(result) else ''
