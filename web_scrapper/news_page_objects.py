@@ -39,7 +39,7 @@ class HomePage(NewsPage):
         return set(link['href'] for link in links_list)
 
 
-class ArticlePAge(NewsPage):
+class ArticlePage(NewsPage):
      
     def __init__(self, news_site_uid, url):
         #Herencia
