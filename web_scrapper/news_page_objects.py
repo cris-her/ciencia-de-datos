@@ -45,6 +45,7 @@ class ArticlePage(NewsPage):
         #Herencia
         super().__init__(news_site_uid, url)
 
+    #the properties are used to generate the csv headers also
     @property
     def body(self):
         result = self._select(self._queries['article_body'])

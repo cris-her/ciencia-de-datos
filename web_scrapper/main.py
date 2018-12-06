@@ -2,6 +2,8 @@ import argparse
 #Esta libreria viene del pasado
 import logging
 import re
+import datetime
+import csv
 
 logging.basicConfig(level=logging.INFO)
 import news_page_objects as news
@@ -33,9 +35,27 @@ def _news_scraper(news_site_uid):
             print(Style.RESET_ALL)
 
             articles.append(article)
-            print(article.title)
-        
-    print(len(articles))
+    
+    _save_articles(news_site_uid, articles)
+
+def _save_articles(news_site_uid, articles):
+    now = datetime.datetime.now().strftime('%Y,_%m_%d')
+    out_file_name = f'{news_site_uid}_{now}_articles.csv'
+
+    csv_headers = list(filter(lambda property: not property.startswith('_'), 
+                        dir(articles[0])))
+
+    #print(Fore.CYAN + str(csv_headers))
+
+    with open(out_file_name, mode='w+') as f:
+        writer = csv.writer(f)
+        writer.writerow(csv_headers)
+
+        for article in articles:
+            row = [str(getattr(article, prop)) for prop in csv_headers]
+            writer.writerow(row)
+
+
 
 
 def _fetch_article(news_site_uid, host, link):
