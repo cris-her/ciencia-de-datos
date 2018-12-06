@@ -9,7 +9,7 @@ news_sites:
     url: https://www.eltiempo.com
     queries:
       homepage_article_links: '.title-container a'
-      article_body: '.field-name-body'
+      article_body: '.articulo-contenido'
       article_title: '.titulo-principal-bk h1'
   elpais:
     url: https://elpais.com
