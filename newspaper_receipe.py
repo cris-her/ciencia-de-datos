@@ -27,6 +27,8 @@ def _extract_newspaper_uid(filename):
     logger.info('Extracting newspaper uid')
     # Esto es muy especifico de nuestro data set periodico_fecha
     newspaper_uid = filename.split('_')[0]
+    print(filename)
+    print(filename.split('_')[0])
 
     logger.info(f'Newspaper uid detected {newspaper_uid}')
     return newspaper_uid

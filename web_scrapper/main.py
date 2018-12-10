@@ -39,7 +39,7 @@ def _news_scraper(news_site_uid):
     _save_articles(news_site_uid, articles)
 
 def _save_articles(news_site_uid, articles):
-    now = datetime.datetime.now().strftime('%Y,_%m_%d')
+    now = datetime.datetime.now().strftime('%Y_%m_%d')
     out_file_name = f'{news_site_uid}_{now}_articles.csv'
 
     csv_headers = list(filter(lambda property: not property.startswith('_'), 
