@@ -15,6 +15,8 @@ def main(filename):
     newspaper_uid = _extract_newspaper_uid(filename)
     df = _add_newspaper_uid_column(df, newspaper_uid)
     df = _extract_host(df)
+    
+    return df
 
 def _read_data(filename):
     logger.info(f'Reading file {filename}')
@@ -48,4 +50,5 @@ if __name__ == "__main__":
                         help='The path to the dirty data', 
                         type=str)
     arg = parser.parse_args()
-    main(arg.filename)
+    df = main(arg.filename)
+    print(df)
