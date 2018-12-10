@@ -22,7 +22,7 @@ is_root_path = re.compile(r'^/.+$')
 
 def _news_scraper(news_site_uid):
     host = config()['news_sites'][news_site_uid]['url']
-    logging.info(f"Beginning scraper for {host}")
+    logger.info(f"Beginning scraper for {host}")
     homepage = news.HomePage(news_site_uid, host)
 
     articles = []
