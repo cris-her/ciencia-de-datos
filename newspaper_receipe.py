@@ -9,7 +9,7 @@ import  pandas as pd
 logger = logging.getLogger(__name__)
 
 def main(filename):
-    logger.info('Startin cleaning process')
+    logger.info('Starting cleaning process')
 
     df = _read_data(filename)
     newspaper_uid = _extract_newspaper_uid(filename)
